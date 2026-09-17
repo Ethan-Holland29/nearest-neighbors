@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-//COP 3502C
-//PA4
-//By Ethan Holland
-
+//Author: Ethan Holland
 
 typedef struct coordinate
 {
@@ -20,7 +17,7 @@ coordinate** readData(int n);
 void wrapper(coordinate** coordsList, int n, int t);
 int compareTo(coordinate* ptrPt1, coordinate* ptrPt2, coordinate* myStore);
 double calcDistance(coordinate* ptPtr, coordinate* myStore);
-coordinate* myStore; //ONLY GLOBAL VARIABLE ALLOWED
+coordinate* myStore; 
 int binarySearch(coordinate** searchList, coordinate item, int len);
 
 
@@ -78,7 +75,7 @@ int main(void)
 
 coordinate** readData(int n)
 {
-    //x and y are our location, n is the number of smoothie shops, s is the number of points
+    //x and y are our location, n is the number of neighboring buildings, s is the number of points
     //to search for, and t is the threshold to be used for determining if we run merge or
     //insertion sort.
 
@@ -103,11 +100,11 @@ void insertionSortModified(coordinate** coordsList, int l, int r)
         {
             if (compareTo(coordsList[j], hand, myStore) > 0)
                 coordsList[j+1] = coordsList[j];
-            else //jth book is already smaller
+            else 
                 break;
 
         }
-        //insert the book into the next spot
+       
         coordsList[j+1] = hand;
 
     }
